@@ -2,7 +2,6 @@ package com.talesra.rajat.ramanujansquare;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Environment;
 import android.support.v7.app.ActionBar;
@@ -11,18 +10,13 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -122,61 +116,44 @@ public class FinalSquare extends ActionBarActivity {
 
             @Override
             public void onClick(View v) {
-                View view = findViewById(R.id.rlouter);
-                view = view.getRootView();
-                view.setDrawingCacheEnabled(true);
 
-                view.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                boolean sdCard = isSDCardPresent();
 
-                view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-
-                Bitmap bitmap = view.getDrawingCache();
-
-                BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
-
-                if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-                    //we check if external storage is available, otherwise display an error message to the user
-
-                    File sdCard = Environment.getExternalStorageDirectory();
-                    File directory = new File (sdCard.getAbsolutePath() + "/Tutorial_ScreenShot");
-                    directory.mkdirs();
-
-                    String filename = "screenshot" + i + ".jpg";
-                    File yourFile = new File(directory, filename);
-
-                    while (yourFile.exists()) {
-                        i++;
-                        filename = "screenshot" + i + ".jpg";
-                        yourFile = new File(directory, filename);
-                    }
-
-                    if (!yourFile.exists()) {
-                        if (directory.canWrite())
-                        {
-                            try {
-                                FileOutputStream out = new FileOutputStream(yourFile, true);
-                                bitmap.compress(Bitmap.CompressFormat.PNG, 90, out);
-                                out.flush();
-                                out.close();
-                                Toast.makeText(FinalSquare.this, "File exported to /sdcard/Tutorial_ScreenShot/screenshot" + i + ".jpg", Toast.LENGTH_SHORT).show();
-                                i++;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-                    }
-
-                }
-                else
+                if (sdCard==true)
                 {
-                    Toast.makeText(FinalSquare.this, "SD Card not available!", Toast.LENGTH_SHORT).show();
+                    Bitmap bitmap = takeScreenshot();
+                    saveBitmap(bitmap);
+                    Toast.makeText(FinalSquare.this, "Image Saved to storage.", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
 
     }
+
+    public static boolean isSDCardPresent() {
+        return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
+    }
+
+    public Bitmap takeScreenshot() {
+        View rootView = findViewById(android.R.id.content).getRootView();
+        rootView.setDrawingCacheEnabled(true);
+        return rootView.getDrawingCache();
+    }
+
+    public void saveBitmap(Bitmap bitmap) {
+        File imagePath = new File(Environment.getExternalStorageDirectory() + "/"+name+"Square.png");
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+        } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
+        }
+    }
+
 }

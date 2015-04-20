@@ -1,6 +1,5 @@
 package com.talesra.rajat.ramanujansquare;
 
-import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,9 +9,6 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.TextView;
 
 public class RamanujanSquare extends ActionBarActivity {
@@ -263,7 +259,7 @@ public class RamanujanSquare extends ActionBarActivity {
                 subheading.setText("RAMANUJAN Square");
                 if(cnt==117)
                     cnt--;
-                if(cnt==100)
+                if(cnt==99)
                     cnt++;
                 defaultCnt();
                 defaultTextCnt();
@@ -984,73 +980,73 @@ public class RamanujanSquare extends ActionBarActivity {
 
     private void fourCnt() {
 
-        tv11.setBackgroundColor(Color.parseColor("#ffeb3b"));
-        tv12.setBackgroundColor(Color.parseColor("#ffeb3b"));
-        tv13.setBackgroundColor(Color.parseColor("#ffc107"));
-        tv14.setBackgroundColor(Color.parseColor("#ffc107"));
+        tv11.setBackgroundColor(Color.parseColor("#4caf50"));
+        tv12.setBackgroundColor(Color.parseColor("#4caf50"));
+        tv13.setBackgroundColor(Color.parseColor("#cddc39"));
+        tv14.setBackgroundColor(Color.parseColor("#cddc39"));
 
-        tv21.setBackgroundColor(Color.parseColor("#ffeb3b"));
-        tv22.setBackgroundColor(Color.parseColor("#ffeb3b"));
-        tv23.setBackgroundColor(Color.parseColor("#ffc107"));
-        tv24.setBackgroundColor(Color.parseColor("#ffc107"));
+        tv21.setBackgroundColor(Color.parseColor("#4caf50"));
+        tv22.setBackgroundColor(Color.parseColor("#4caf50"));
+        tv23.setBackgroundColor(Color.parseColor("#cddc39"));
+        tv24.setBackgroundColor(Color.parseColor("#cddc39"));
 
-        tv31.setBackgroundColor(Color.parseColor("#ff9800"));
-        tv32.setBackgroundColor(Color.parseColor("#ff9800"));
-        tv33.setBackgroundColor(Color.parseColor("#ff5722"));
-        tv34.setBackgroundColor(Color.parseColor("#ff5722"));
+        tv31.setBackgroundColor(Color.parseColor("#76ff03"));
+        tv32.setBackgroundColor(Color.parseColor("#76ff03"));
+        tv33.setBackgroundColor(Color.parseColor("#8bc34a"));
+        tv34.setBackgroundColor(Color.parseColor("#8bc34a"));
 
-        tv41.setBackgroundColor(Color.parseColor("#ff9800"));
-        tv42.setBackgroundColor(Color.parseColor("#ff9800"));
-        tv43.setBackgroundColor(Color.parseColor("#ff5722"));
-        tv44.setBackgroundColor(Color.parseColor("#ff5722"));
+        tv41.setBackgroundColor(Color.parseColor("#76ff03"));
+        tv42.setBackgroundColor(Color.parseColor("#76ff03"));
+        tv43.setBackgroundColor(Color.parseColor("#8bc34a"));
+        tv44.setBackgroundColor(Color.parseColor("#8bc34a"));
 
     }
 
     private void threeCnt() {
 
-        tv11.setBackgroundColor(Color.parseColor("#cfd8dc"));
+        tv11.setBackgroundColor(Color.parseColor("#673ab7"));
         tv12.setBackgroundColor(Color.parseColor("#333333"));
         tv13.setBackgroundColor(Color.parseColor("#333333"));
-        tv14.setBackgroundColor(Color.parseColor("#607d8b"));
+        tv14.setBackgroundColor(Color.parseColor("#03a9f4"));
 
         tv21.setBackgroundColor(Color.parseColor("#333333"));
-        tv22.setBackgroundColor(Color.parseColor("#cfd8dc"));
-        tv23.setBackgroundColor(Color.parseColor("#607d8b"));
+        tv22.setBackgroundColor(Color.parseColor("#673ab7"));
+        tv23.setBackgroundColor(Color.parseColor("#03a9f4"));
         tv24.setBackgroundColor(Color.parseColor("#333333"));
 
         tv31.setBackgroundColor(Color.parseColor("#333333"));
-        tv32.setBackgroundColor(Color.parseColor("#607d8b"));
-        tv33.setBackgroundColor(Color.parseColor("#cfd8dc"));
+        tv32.setBackgroundColor(Color.parseColor("#03a9f4"));
+        tv33.setBackgroundColor(Color.parseColor("#673ab7"));
         tv34.setBackgroundColor(Color.parseColor("#333333"));
 
-        tv41.setBackgroundColor(Color.parseColor("#607d8b"));
+        tv41.setBackgroundColor(Color.parseColor("#03a9f4"));
         tv42.setBackgroundColor(Color.parseColor("#333333"));
         tv43.setBackgroundColor(Color.parseColor("#333333"));
-        tv44.setBackgroundColor(Color.parseColor("#cfd8dc"));
+        tv44.setBackgroundColor(Color.parseColor("#673ab7"));
 
     }
 
     private void twoCnt() {
 
         tv11.setBackgroundColor(Color.parseColor("#880e4f"));
-        tv12.setBackgroundColor(Color.parseColor("#c2185b"));
-        tv13.setBackgroundColor(Color.parseColor("#e91e63"));
-        tv14.setBackgroundColor(Color.parseColor("#f06292"));
+        tv12.setBackgroundColor(Color.parseColor("#d81b60"));
+        tv13.setBackgroundColor(Color.parseColor("#f06292"));
+        tv14.setBackgroundColor(Color.parseColor("#f8bbd0"));
 
         tv21.setBackgroundColor(Color.parseColor("#880e4f"));
-        tv22.setBackgroundColor(Color.parseColor("#c2185b"));
-        tv23.setBackgroundColor(Color.parseColor("#e91e63"));
-        tv24.setBackgroundColor(Color.parseColor("#f06292"));
+        tv22.setBackgroundColor(Color.parseColor("#d81b60"));
+        tv23.setBackgroundColor(Color.parseColor("#f06292"));
+        tv24.setBackgroundColor(Color.parseColor("#f8bbd0"));
 
         tv31.setBackgroundColor(Color.parseColor("#880e4f"));
-        tv32.setBackgroundColor(Color.parseColor("#c2185b"));
-        tv33.setBackgroundColor(Color.parseColor("#e91e63"));
-        tv34.setBackgroundColor(Color.parseColor("#f06292"));
+        tv32.setBackgroundColor(Color.parseColor("#d81b60"));
+        tv33.setBackgroundColor(Color.parseColor("#f06292"));
+        tv34.setBackgroundColor(Color.parseColor("#f8bbd0"));
 
         tv41.setBackgroundColor(Color.parseColor("#880e4f"));
-        tv42.setBackgroundColor(Color.parseColor("#c2185b"));
-        tv43.setBackgroundColor(Color.parseColor("#e91e63"));
-        tv44.setBackgroundColor(Color.parseColor("#f06292"));
+        tv42.setBackgroundColor(Color.parseColor("#d81b60"));
+        tv43.setBackgroundColor(Color.parseColor("#f06292"));
+        tv44.setBackgroundColor(Color.parseColor("#f8bbd0"));
 
     }
 
@@ -1061,20 +1057,20 @@ public class RamanujanSquare extends ActionBarActivity {
         tv13.setBackgroundColor(Color.parseColor("#4a148c"));
         tv14.setBackgroundColor(Color.parseColor("#4a148c"));
 
-        tv21.setBackgroundColor(Color.parseColor("#7b1fa2"));
-        tv22.setBackgroundColor(Color.parseColor("#7b1fa2"));
-        tv23.setBackgroundColor(Color.parseColor("#7b1fa2"));
-        tv24.setBackgroundColor(Color.parseColor("#7b1fa2"));
+        tv21.setBackgroundColor(Color.parseColor("#8e24aa"));
+        tv22.setBackgroundColor(Color.parseColor("#8e24aa"));
+        tv23.setBackgroundColor(Color.parseColor("#8e24aa"));
+        tv24.setBackgroundColor(Color.parseColor("#8e24aa"));
 
-        tv31.setBackgroundColor(Color.parseColor("#9c27b0"));
-        tv32.setBackgroundColor(Color.parseColor("#9c27b0"));
-        tv33.setBackgroundColor(Color.parseColor("#9c27b0"));
-        tv34.setBackgroundColor(Color.parseColor("#9c27b0"));
+        tv31.setBackgroundColor(Color.parseColor("#ba68c8"));
+        tv32.setBackgroundColor(Color.parseColor("#ba68c8"));
+        tv33.setBackgroundColor(Color.parseColor("#ba68c8"));
+        tv34.setBackgroundColor(Color.parseColor("#ba68c8"));
 
-        tv41.setBackgroundColor(Color.parseColor("#ba68c8"));
-        tv42.setBackgroundColor(Color.parseColor("#ba68c8"));
-        tv43.setBackgroundColor(Color.parseColor("#ba68c8"));
-        tv44.setBackgroundColor(Color.parseColor("#ba68c8"));
+        tv41.setBackgroundColor(Color.parseColor("#e1bee7"));
+        tv42.setBackgroundColor(Color.parseColor("#e1bee7"));
+        tv43.setBackgroundColor(Color.parseColor("#e1bee7"));
+        tv44.setBackgroundColor(Color.parseColor("#e1bee7"));
 
     }
 

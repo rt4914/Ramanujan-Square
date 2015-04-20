@@ -13,6 +13,7 @@ import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class YourSquare extends ActionBarActivity {
@@ -75,9 +76,22 @@ public class YourSquare extends ActionBarActivity {
             public void onClick(View v) {
 
                 pName = name.getText().toString();
-                FinalSquare.name = pName;
-                Intent i = new Intent(getApplicationContext(), FinalSquare.class);
-                startActivity(i);
+
+                if(pName.length()!=0)
+                {
+                    if(dateText.getText().toString().length()!=0)
+                    {
+                        FinalSquare.name = pName;
+                        Intent i = new Intent(getApplicationContext(), FinalSquare.class);
+                        startActivity(i);
+                    }
+                    else
+                        Toast.makeText(getApplicationContext(), "Enter D.O.B.", Toast.LENGTH_LONG).show();
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "Enter First Name.", Toast.LENGTH_LONG).show();
+
             }
         });
 
